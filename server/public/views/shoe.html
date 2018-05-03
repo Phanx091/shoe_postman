@@ -1,0 +1,14 @@
+<h1>POSTMAN THEM SHOES</h1>
+
+<input type="text" ng-model="shoeGetList.name" placeholder="Name">
+<input type="text" ng-model="shoeGetList.cost" placeholder="Cost">
+<button ng-click="vm.postShoe(shoeGetList)">add new shoe</button>
+<button ng-click="vm.getShoe()">get shoe</button>
+
+<div class="row">
+
+    <ul>
+        <li ng-repeat="shoe in vm.displayShoes.inventory">Name: {{shoe.name}} Cost: {{shoe.cost}}<button ng-click="delete()">delete</button></li>
+    </ul>
+</div>
+</div>

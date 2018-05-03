@@ -8,10 +8,17 @@
     <script src="vendors/angular.min.js"></script>
     <script src="vendors/angular-route.js"></script>
     <script src="scripts/client.js"></script>
+    <script src="scripts/services/shoe-services.js"></script>
+    <script src="scripts/controllers/shoe.controller.js"></script>
 </head>
-<body>
-    <h1>POSTMAN THEM SHOES</h1>
+<body ng-app="ShoeApp">
+
+
+
+    <a ng-href="#!/">Home</a>
+    <a ng-href="#!/shoe">Shoe</a>
     <ng-view></ng-view>
-    
+
+
 </body>
 </html>

@@ -15,7 +15,7 @@ const pool = new Pool({
   idleTimeoutMillis: 30000 // 30 seconds to try to connect, otherwise cancel query
 });
 
-const shoesList = [
+const shoeGetList = [
   {
     name: "Nike Roshe Run",
     cost: 127
@@ -39,14 +39,15 @@ pool.on("error", error => {
   console.log("Error with postgres pool", error);
 });
 
-router.get("/shoe", (req, res) => {
+router.get("/", (req, res) => {
   console.log("router get /shoe", req.body);
-  res.send(shoesList);
+  res.send(shoeGetList);
 });
 
-router.post("/shoe", (req, res) => {
+router.post("/", (req, res) => {
   console.log("router post /shoe");
   const shoe = req.body;
+  console.log(shoe);
   pool
     .query(
       `INSERT INTO "shoes" ("name", "cost") 
